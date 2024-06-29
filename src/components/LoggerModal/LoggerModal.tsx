@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { useTypedSelector } from "../../hooks/redux";
 import { FiX } from "react-icons/fi";
-import LogItem from "./LogItem/LogItem";
+import LogItem from "./LogItem/LogItem"; // LogItem 컴포넌트 import
 import {
   body,
   closeButton,
@@ -27,7 +27,7 @@ const LoggerModal: FC<TLoggerModalProps> = ({ setIsLoggerOpen }) => {
         </div>
         <div className={body}>
           {logs.map((log) => (
-            <LogItem key={log.logId} LogItem={log} />
+            <LogItem key={log.logId} logItem={log} /> // LogItem 컴포넌트 사용
           ))}
         </div>
       </div>

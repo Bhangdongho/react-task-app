@@ -4,24 +4,25 @@ import { BsFillPersonFill } from "react-icons/bs";
 import { author, date, logItemWrap, message } from "./LogItem.css";
 
 type TLogItemProps = {
-  logItem: ILogItem;
+  logItem: ILogItem; // Props 이름을 logItem으로 수정
 };
 
-const LogItem: FC<TLogItemProps> = ({ LogItem }) => {
-  const timeOffset = new Date(Date.now() - Number(LogItem.logTimestamp));
+const LogItem: FC<TLogItemProps> = ({ logItem }) => {
+  // Props 이름을 logItem으로 수정
+  const timeOffset = new Date(Date.now() - Number(logItem.logTimestamp)); // logItem으로 수정
 
   const showOffsetTime = `
-  ${timeOffset.getMinutes() > 0 ? `${timeOffset.getMinutes()}m` : ""}
-  ${timeOffset.getSeconds() > 0 ? `${timeOffset.getSeconds()}s age` : ""}
-  ${timeOffset.getSeconds() === 0 ? `just now` : ""}`;
+    ${timeOffset.getMinutes() > 0 ? `${timeOffset.getMinutes()}m` : ""}
+    ${timeOffset.getSeconds() > 0 ? `${timeOffset.getSeconds()}s ago` : ""}
+    ${timeOffset.getSeconds() === 0 ? `just now` : ""}`;
 
   return (
     <div className={logItemWrap}>
       <div className={author}>
         <BsFillPersonFill />
-        {LogItem.logAuthor}
+        {logItem.logAuthor}
       </div>
-      <div className={message}>{LogItem.logMessage}</div>
+      <div className={message}>{logItem.logMessage}</div>
       <div className={date}>{showOffsetTime}</div>
     </div>
   );
