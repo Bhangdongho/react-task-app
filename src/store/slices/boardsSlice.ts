@@ -149,7 +149,7 @@ const boardsSlice = createSlice({
       );
     },
 
-    deleteTask: (state, { payload }: PayloadAction<TDeleteListAction>) => {
+    deleteTask: (state, { payload }: PayloadAction<TDeleteTaskAction>) => {
       state.boardArray = state.boardArray.map((board) =>
         board.boardId === payload.boardId
           ? {

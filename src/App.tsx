@@ -14,7 +14,7 @@ import LoggerModal from "./components/LoggerModal/LoggerModal";
 import { deleteBoard, sort } from "./store/slices/boardsSlice";
 import { v4 } from "uuid";
 import { addLog } from "./store/slices/loggerSlice";
-import { DragDropContext, Droppable } from "react-beautiful-dnd";
+import { DragDropContext } from "react-beautiful-dnd";
 
 function App() {
   const dispatch = useTypedDispatch();
